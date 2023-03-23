@@ -58,7 +58,25 @@ class Peikko:
 
 
 ### Kirjoita luokka Sankari tähän.
+class Sankari:
+    """
+    Luokka edustaa sankarihahmoa pelissä. Sankarilla on nimi, rohkeus ja katseen voima. 
+    Lisäksi hänellä on metodi arvo_hurraus, joka palauttaa satunnaisen merkkijonon. 
+    """
+    def __init__(self, nimi):
+        """
+        Luo uuden sankari-olion annetulla nimellä, satunnaisella rohkeudella ja satunnaisella katseen voimalla.
+        """
+        self.nimi = nimi
+        self.rohkeus = random.randint(4,8)
+        self.katseen_voima = random.randint(2,4)
 
+    def arvo_hurraus(self):
+        """
+        Palauta satunnainen hurrausmerkkijono.
+        """
+        hurraukset = ["Eläköön!", "Hurrraa!", "Voitto on meidän!", "Jes, me teimme sen!", "Hienoa työtä!"]
+        return random.choice(hurraukset)
 
 def hurraa(olio):
     """Tulostaa satunnaisen hurrauksen annetulle oliolle.
