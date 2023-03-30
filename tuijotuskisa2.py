@@ -1,10 +1,14 @@
 import random
 import time
 
-class Olento:
+
+                        
+class Olento:           
+    #class muodostaa luokan tämän classin sisällä arvotaan numeroita/vahvuustasoa eri tyypeille esim nimi ja rohkeus.
     def __init__(self, nimi, rohkeus, katseen_voima):
         self.nimi = nimi
         self.rohkeus = rohkeus + random.randint(1,8)
+        
         self.katseen_voima = katseen_voima + random.randint(katseen_voima,8)
         
         
@@ -96,8 +100,9 @@ class Vuorenpeikko(Peikko):
     
     NIMITAVUT = ("moi", "hui", "hai", "loi", "hei", "poi", "leima", "siansaksa", "heprea", "moikka")
     RIEMUTAVUT = ("zaza", "koi", "ra", "tsa", "hehehe", "Suiii", "Limfao", "Raah", "suomi", "Raaste")
-
+    
     def __init__(self, rohkeus = 3, katseen_voima = 6):
+        #super viee tietoa peikko luokkaan
         super().__init__( rohkeus, katseen_voima)
         
 
@@ -106,8 +111,9 @@ class Luolapeikko(Peikko):
 
     NIMITAVUT = ("ai","ou","auts","jiik","ouh","eih","kääk")
     RIEMUTAVUT = ("bout", "to", "cum", "buuussss", "im", "bauta", "blow", "gaah", "bus", "yaaz", "haram bro")
+   
     def __init__(self, rohkeus = 2, katseen_voima = 8):
-        
+         #super viee tietoa peikko luokkaan
         super().__init__( rohkeus, katseen_voima)
 
 def hurraa(olio):
@@ -191,6 +197,7 @@ while sankari.rohkeus > 0:
     # Tulostetaan vastaan tulevan peikon tiedot.
     peikkoilijat = [Peikko, Luolapeikko, Vuorenpeikko]
     valitut_peikot = random.choice(peikkoilijat)
+    #arpoo vasustajan nimen 
     peikko = valitut_peikot()
     peikon_tiedot = peikko.nimi + " [" + str(peikko.rohkeus) + "]"
     print("Vastaan tulee hurja %s!" % peikon_tiedot)
