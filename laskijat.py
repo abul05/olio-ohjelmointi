@@ -34,11 +34,42 @@ class Laskija:
         return tulo
     
 
-class MonenLaskija:
-    pass
+
+class MonenLaskija(Laskija):
+    """Luokka, joka toteuttaa eri laskutoimituksia useille luvuille.
+
+    Korvaa Laskija-luokan metodit siten, että ne voivat ottaa vastaan kuinka monta lukua tahansa.
+    """
+
+    def summaa(self, *args):
+        """Palauttaa lukujen summan.
+
+        :param args: luvut, joiden summa halutaan laskea
+        :type args: Union[int, float]
+        :return: lukujen summa
+        :rtype: Union[int, float]
+        """
+        return sum(args)
+
+    def kerro(self, *args):
+        """Palauttaa lukujen tulon.
+
+        :param args: luvut, joiden tulo halutaan laskea
+        :type args: Union[int, float]
+        :return: lukujen tulo
+        :rtype: Union[int, float]
+        """
+        tulo = 1
+        for luku in args:
+            tulo *= luku
+        return tulo
 
 
-### Lisää MonenLaskija ja argumenttien_tulostaja tähän.
+def argumenttien_tulostaja(**kwargs):
+    """Tulostaa annetut avainsana-argumentit avainsana ja arvo -muodossa."""
+    for avainsana, arvo in kwargs.items():
+        print(f'Argumentin "{avainsana}" arvo on {arvo}.')
+
 
 
 
